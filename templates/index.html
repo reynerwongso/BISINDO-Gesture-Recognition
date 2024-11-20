@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Recognition</title>
+    <style>
+        /* Basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            border: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sign Language Recognition</h1>
+
+    <!-- Video element to display the webcam stream -->
+    <video id="webcam" autoplay playsinline></video>
+    
+<!--<h2>Predicted Gesture: <span id="gesture">None</span></h2>-->
+<!--<h3>Confidence: <span id="confidence">0.00</span></h3>-->
+
+    <!-- Video feed from Flask -->
+    <img src="{{ url_for('video_feed') }}" id="video-stream" />
+</div>
+
+<script>
+    // Access the webcam and display the stream in the <video> element
+    function startWebcam() {
+        const videoElement = document.getElementById('webcam');
+        
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    videoElement.srcObject = stream;
+                })
+                .catch(function(error) {
+                    console.error("Error accessing webcam: ", error);
+                });
+        } else {
+            alert("Your browser does not support camera access.");
+        }
+    }
+
+    // Call the function to start the webcam
+    startWebcam();
+</script>
+
+</body>
+</html>
