@@ -1,7 +1,7 @@
 import streamlit as st
+import cv2
 import numpy as np
 import mediapipe as mp
-import cv2
 from tensorflow.keras.models import load_model
 
 # Load the trained model
