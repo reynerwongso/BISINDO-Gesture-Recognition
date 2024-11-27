@@ -26,8 +26,8 @@ grpcio==1.68.0
 h5py==3.12.1
 idna==3.10
 itsdangerous==2.2.0
-jax==0.4.35
-jaxlib==0.4.35
+jax==0.4.28
+jaxlib==0.4.28
 Jinja2==3.1.4
 jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
