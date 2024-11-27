@@ -63,7 +63,7 @@ pyparsing==3.2.0
 pypiwin32==223
 python-dateutil==2.9.0.post0
 pytz==2024.2
-pywin32==308
+pywin32==308; platform_system == "Windows"
 referencing==0.35.1
 requests==2.32.3
 requests-oauthlib==2.0.0
